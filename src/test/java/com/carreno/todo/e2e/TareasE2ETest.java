@@ -12,12 +12,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.boot.test.web.server.LocalServerPort;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-@SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class TareasE2ETest {
     private WebDriver driver;
+
+    @LocalServerPort
+    private int port;
 
     @BeforeEach
     void setUp() {
@@ -25,7 +29,7 @@ class TareasE2ETest {
         ChromeOptions opts = new ChromeOptions();
         opts.addArguments("--headless", "--no-sandbox");
         driver = new ChromeDriver(opts);
-        driver.get("http://localhost:8080/tareas");
+        driver.get("http://localhost:" + port + "/tareas");
     }
 
     @Test
