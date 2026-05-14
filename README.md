@@ -83,7 +83,7 @@ El workflow se ejecuta automáticamente en cada `push` y `pull_request`.
 ![Selenium](img/captura1.png)
 
 ### Evidencia 2 — Postman Runner con 0 failures
-![Postman](img/captura2.png)
+![Postman](img/Captura2.png)
 
 ### Evidencia 3 — GitHub Actions passing
 ![Actions](img/captura3.png)
